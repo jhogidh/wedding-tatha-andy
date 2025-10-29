@@ -1,0 +1,513 @@
+#button-open{
+border-radius: 5px !important;
+background: #75101a !important;
+text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.font-monesta_light-title .content-layout section h1, .font-monesta_light-title section h1 {
+font-size: 28px
+}
+p {
+font-size: 14px;
+}
+.box-separator::after {
+content: "";
+position: absolute;
+bottom: -1px;
+width: 100%;
+top: 0;
+left: 0;
+background: linear-gradient(180deg, #FFFFFF00 69%, #75101a 100%)
+}
+
+.box-separator {
+position: relative;
+}
+
+.quotes {
+width: 98%;
+float: right;
+padding-right: 10px;
+position: relative;
+font-size: 13px !important;
+font-style: normal;
+}
+
+.quotes::before {
+content: "";
+position: absolute;
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/5jt7EsI93RowHCH9ccB6n9/c9a23b78b05495a3e853e322b7b791f1/_Group___14_.png');
+top: 0;
+    bottom: 0;
+width: 70px;
+    left: -50px;
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+#quote .text-center {
+display: none;
+}
+
+
+.shapeBottom2 svg {
+fill: #75101a;
+}
+
+#coupleProfile {
+padding: 6rem 1rem 3rem 1rem;
+background-color: #201c13;
+position: relative;
+}
+
+#coupleProfile .grid-profile{
+grid-template-columns: 1fr !important;
+}
+
+#coupleProfile.minimalis .male .profil-info {
+grid-row: 2/3;
+}
+#coupleProfile .grid-profile .profil-info{
+text-align: center;
+padding: 2rem !important;
+}
+
+#coupleProfile .grid-profile .profil-info p{
+font-size: 14px !important;
+margin-bottom: 5px !important;
+}
+
+#coupleProfile h5 b {
+color: #dfae56;
+font-family: monesta_light;
+font-size: 28px;
+font-style: italic;
+}
+
+#coupleProfile.default h4 b{
+font-family: monesta_light;
+}
+
+#coupleProfile .grid-profile {
+margin-bottom: 2rem;
+}
+
+#coupleProfile .grid-profile .box, #coupleProfile .grid-profile .box-female {
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/7LBue05zUwkkRxIj0Yz9wx/55df0f8b2ee4262fef0b8d398a13f94e/bba962b7c709c41319c4677807ce8c2e-ai__1_.png');
+background-size: contain;
+    width: 78%;
+margin: 0 auto;
+padding: 15px;
+border-radius: 15px;
+border: 2px solid #eae8d7;
+}
+
+#coupleProfile.minimalis .imgWrapper{
+padding-top: 125% !important;
+}
+#coupleProfile.minimalis .imgWrapper img {
+border-radius: 15px;
+}
+
+#coupleProfile .grid-profile:first-child{
+margin-bottom:7rem;
+position: relative;
+}
+
+#coupleProfile .grid-profile:first-child::after, .item-rundown::after{
+content: "";
+position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/4k2WsDYjwEG4Z5IQUSiLuv/36e99c633f38497eb6fb30628e158d2e/_Group___16_.png');
+background-size: cover;
+-webkit-animation: breathing 3s ease-out infinite normal;
+    animation: breathing 3s ease-out infinite 
+}
+
+#coupleProfile .grid-profile:first-child::after{
+width: 150px;
+height: 45px;
+bottom: -3.2rem;
+}
+.item-rundown::after{
+width: 108px;
+height: 30px;
+bottom: -3rem;
+}
+
+.rundown .item-rundown{
+margin: 45px 0 !important;
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: translateX(-50%) scale(0.9);
+    -ms-transform: translateX(-50%) scale(0.9);
+    translateX(-50%) transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: translateX(-50%) scale(1);
+    -ms-transform: translateX(-50%) scale(1);
+   translateX(-50%) transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: translateX(-50%) scale(0.9);
+    -ms-transform: translateX(-50%) scale(0.9);
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: translateX(-50%) scale(0.9);
+    -ms-transform: translateX(-50%) scale(0.9);
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+
+#story {
+position: relative;
+padding-left: 4rem;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+#story::after, .quoteGalleries::after, #adressWrapper::after,#bottom-rundown::after, #rsvp::after {
+position: absolute;
+content: "";
+    width: 50px;
+    bottom: 0;
+    background-size: contain;
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/7AJK0dCecrE0SYiqRJBjfm/9039c04d30513a1268076d48886f8947/_Group___13_.png');
+left: 0;
+}
+
+#story::after, .quoteGalleries::after, #adressWrapper::after, #rsvp::after,  #bottom-rundown::after {
+ top: 0;
+}
+
+
+#story-slider {
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/1AOVdKdbpt2Zj0bhf2IKml/a2ffa67df37890a6451418159af86136/Proyek_Baru__1_.png');
+    background-size: cover;
+    background-blend-mode: exclusion;
+    box-shadow: 2px 1px 5px 0px #201c13;
+    background-color: #75101a;
+}
+
+.quoteGalleries p {
+margin-bottom: 0 !important;
+}
+
+.quoteGalleries {
+position: relative;
+padding-left: 4rem;
+padding-top: 2rem;
+min-height: 250px;
+}
+
+#galleries {
+padding-top: 0;
+}
+
+.quoteGalleries p{
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/15MJTkWSaHvJLygQRJunU1/aa59686dfa6c32afb11a4c0edc4d0bbe/Proyek_Baru.png');
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: contain;
+background-repeat: no-repeat;
+}
+
+#countdown, #wishes {
+padding: 4rem 1rem !important;
+background-image: url(https://images.ctfassets.net/q40z6pfqje6o/1AOVdKdbpt2Zj0bhf2IKml/a2ffa67df37890a6451418159af86136/Proyek_Baru__1_.png);
+background-size: cover;
+background-color: #75101a;
+    background-blend-mode: exclusion;
+background-position: center;
+}
+
+.galleriSection{
+padding: 3rem;
+background: #201c13;
+}
+
+#weddingDetail{
+padding-top: 0;
+padding-bottom: 0;
+}
+
+#countdown li span b {
+font-size: 24px !important;
+font-family: monesta_light;
+}
+
+#countdown li b {
+font-size: 16px !important;
+font-family: alice;
+text-transform: capitalize !important;
+font-weight: normal;
+color: #75101a;
+}
+
+#countdown li#days{
+display: inline-block !important;
+}
+
+#countdown li#days span{
+font-size: 24px !important;
+}
+
+#countdown li#days{
+line-height: 1;
+}
+
+#countdown li {
+padding: 10px !important;
+}
+
+.video{
+    padding: 3rem 3rem 1rem 3rem;
+    background: #201c13;
+}
+
+.btn-calendar.btn-primary, .btn.btn-info{
+border-radius: 5px !important;
+background-color: #75101a;
+border-color: #dfae56;
+font-size: 14px;
+}
+
+.countdown-section{
+    box-shadow: 7px 7px 10px #201c1361;
+    border-radius: 10px;
+    width: 84%;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    background-color: #eae8d7;
+}
+
+.countdown-section p {
+color: #201c13;
+font-style: italic;
+font-size: 16px;
+margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+#countdown ul {
+border-bottom: 1px solid #201c13;
+}
+
+#list-rundown {
+padding: 8rem 1rem 5rem 1rem;
+background-color: #201c13;
+position: relative;
+}
+
+.divider-top, .divider-bottom{
+position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.divider-top {
+ transform: rotate(180deg);
+    top: 100%;
+margin-top:-1px;
+}
+
+.divider-bottom {
+bottom: 100%;
+margin-bottom:-1px;
+}
+
+.divider-top svg, .divider-bottom svg{
+fill: #75101a;
+}
+
+#list-rundown::before{
+content: "";
+position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+ top: 0;
+    z-index: 2;
+    width: 139px;
+    height: 120px;
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/7mza9VwHCczUb2DCBl9qxX/580cd47f4738a60a43721cd03b360115/Proyek_Baru__2_.png');
+background-size: cover;
+}
+
+.item-rundown h1 {
+margin-bottom: 20px !important;
+}
+
+.schedule_date{
+text-transform: uppercase;
+}
+
+.item-rundown{
+position: relative;
+}
+
+#adressWrapper{
+    padding-left: 4rem;
+position: relative;
+margin-bottom: 0 !important;
+padding-top: 3rem;
+padding-bottom: 2rem;
+}
+
+#rsvp{
+    padding-left: calc(4rem + 25px);
+    padding-right: 25px;
+position: relative;
+margin-bottom: 0!important;
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+
+#rsvp .text-center{
+    padding: 2rem 1rem;
+    background: #eae8d7;
+border: 10px double #75101a;
+}
+#rsvp .text-center p {
+color: #75101a;
+}
+#rsvp .will-join{
+color: #75101a;
+border-bottom: 1px solid #201c13 !important;
+}
+
+#rsvp .btn {
+font-size: 14px;
+background-color: #75101a;
+border-color: #75101a;
+}
+
+#bottom-rundown{
+padding-left: 4rem;
+position: relative;
+margin-top: 0 !important;
+padding-top: 2rem;
+padding-bottom: 2rem;
+min-height: 250px;
+}
+
+#also_inviting li {
+color: #eae8d7;
+font-family: alice;
+font-size: 14px;
+}
+
+.also_invite b{
+color: #dfae56;
+text-transform: uppercase;
+}
+
+.adress, #maps {
+padding: 0 25px;
+}
+
+#live, #instagram-filter{
+background-color: #201c13 !important;
+margin-bottom: 0 !Important;
+padding: 0 !important;
+}
+
+#live .container, #instagram-filter .sectionFilter, #pay .pay-stick{
+background-color: #eae8d7 !important;
+width: 84%;
+margin: 3rem 8%;
+padding: 3rem 2rem;
+border-radius: 15px;
+position: relative;
+}
+
+#live .container::after, #instagram-filter .sectionFilter::after, #pay .pay-stick::after{
+content: "";
+position: absolute;
+    width: 178px;
+    height: 202px;
+background-image: url('https://images.ctfassets.net/q40z6pfqje6o/6bUz1Urm2ksnnMn4MNgwo5/9410edf2d2502914f4f9e361684400f2/Proyek_Baru__4_.png');
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+z-index: 1;
+}
+
+#live .container p, #instagram-filter p, #pay .pay-stick p  {
+color: #75101a !important;
+}
+
+#live .container .btn, #instagram-filter .sectionFilter .btn, #pay .pay-stick .btn{
+position: relative;
+z-index: 2;
+border-radius: 5px !important;
+background-color: #75101a;
+color: #eae8d7;
+}
+#pay .pay-stick h1{
+font-size: 28px !important;
+margin-bottom: 30px;
+}
+
+.item-wish .avatar-item {
+background-color: #eae8d7 !important;
+font-family: monesta_light;
+}
+
+#pay:not(.float){
+background-color: #201c13;
+float: left;
+width:100%;
+}
+
+.item-wish .message-wish{
+background-color: #eae8d7 !important;
+border-radius: 0 !important;
+box-shadow: none !important;
+    border-bottom: 1px solid #201c1324;
+}
+.item-wish .message-wish p{
+color: #75101a;
+}
+
+#wishes .moment-list{
+background: #eae8d7;
+    width: 88%;
+    margin: 0 6%;
+border-radius: 15px;
+    box-shadow: 7px 7px 10px #201c1361;
+padding: 10px;
+}
+.wishes {
+padding-top: 2rem;
+padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 86%;
+    margin: 2rem auto;
+background-color: #75101a;
+border-radius: 15px;
+}
+.wishes .btn {
+border-radius: 5px !important;
+}
+
+#wishes .alert {
+margin-bottom: 0;
+}
+
+  #sync1 .owl-item img {
+    width: 100% !important;
+  }
+.rsvp-top {
+padding-left:25px !important;
+}
+
+.rsvp-top::after{display:none;}

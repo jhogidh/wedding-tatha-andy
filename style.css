@@ -1,0 +1,83 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #201c13; /* Warna latar belakang utama yang gelap */
+  color: #eae8d7; /* Warna teks utama yang lembut */
+  scroll-behavior: smooth;
+}
+
+/* Menggunakan font Playfair Display untuk judul dan nama */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: "Playfair Display", serif;
+}
+
+/* Skema Warna Kustom dari Desain Asli */
+.bg-primary {
+  background-color: #75101a;
+} /* Merah Marun Tua */
+.bg-secondary {
+  background-color: #201c13;
+} /* Coklat Sangat Gelap */
+.bg-accent {
+  background-color: #dfae56;
+} /* Emas/Perunggu */
+.bg-base {
+  background-color: #eae8d7;
+} /* Krem/Beige */
+
+.text-primary {
+  color: #75101a;
+}
+.text-secondary {
+  color: #201c13;
+}
+.text-accent {
+  color: #dfae56;
+}
+.text-base {
+  color: #eae8d7;
+}
+
+.border-accent {
+  border-color: #dfae56;
+}
+
+/* Animasi untuk elemen yang muncul saat di-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pola Latar Belakang (Gorga Batak) */
+.batak-pattern {
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  background-color: #75101a;
+  background-blend-mode: overlay;
+}
+
+/* Efek glassmorphism untuk kartu/modal */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Mengatur agar scrollbar tidak terlihat tetapi tetap bisa scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
