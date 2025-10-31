@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Undangan Pernikahan - Adinda & John</title>
 
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Playfair Display for headings and Inter for body text -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Alice&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -25,16 +22,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-secondary text-base">
-    <!-- Audio Player -->
     <audio id="background-music" loop>
-      <!-- Ganti src dengan link file musik Anda -->
-      <source
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        type="audio/mpeg"
-      />
+      <source src="music.mp3" type="audio/mpeg" />
     </audio>
 
-    <!-- Tombol Kontrol Musik -->
     <button
       id="music-toggle"
       class="fixed bottom-20 right-5 z-50 w-12 h-12 bg-accent text-secondary rounded-full flex items-center justify-center shadow-lg transition-transform transform hover:scale-110"
@@ -42,22 +33,19 @@
       <i class="fas fa-music"></i>
     </button>
 
-    <!-- Halaman Pembuka (Cover) -->
     <div
       id="cover"
       class="fixed inset-0 bg-secondary z-[100] flex flex-col items-center justify-center transition-opacity duration-1000"
     >
       <div
-        class="absolute inset-0 bg-cover bg-center opacity-30"
+        class="absolute inset-0 bg-cover bg-center"
         style="background-image: url('images/cover.jpg')"
       ></div>
       <div class="relative text-center p-8 text-white">
         <p class="font-heading text-lg tracking-widest text-base">
           The Wedding Of
         </p>
-        <h1 class="font-heading text-6xl md:text-8xl my-4 text-accent">
-          Andy & Tatha
-        </h1>
+        <h1 class="font-heading text-6xl md:text-8xl my-4">Andy & Tatha</h1>
         <p class="text-lg text-base">Sabtu, 22 November 2025</p>
         <div class="mt-8">
           <p class="text-base">Kepada Yth. Bapak/Ibu/Saudara/i</p>
@@ -74,87 +62,145 @@
       </div>
     </div>
 
-    <!-- Konten Utama Undangan -->
     <main id="main-content" class="opacity-0 transition-opacity duration-1000">
-      <!-- Section Pahlawan (Hero) -->
       <section
-        class="h-screen w-full relative flex items-center justify-center text-white text-center p-4"
+        class="h-screen w-full relative flex items-center justify-center text-white text-center p-4 overflow-hidden"
       >
         <div
+          id="hero-image-effect"
           class="absolute inset-0 bg-cover bg-center"
-          style="background-image: url('images/foto.jfif')"
+          style="background-image: url('images/Foto2.jpg')"
         ></div>
-        <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative z-10 reveal">
+
+        <div id="particle-container" class="absolute inset-0 z-5"></div>
+
+        <div class="relative z-10 reveal visible mt-60">
           <h1 class="font-heading text-5xl md:text-7xl">Andy & Tatha</h1>
-          <p class="mt-4 text-lg">
+          <p class="mt-4 text-lg font-alice">
             Kami mengundang Anda untuk merayakan hari bahagia kami.
           </p>
         </div>
       </section>
 
-      <!-- Section Kutipan (Quote) -->
       <section class="py-20 px-6 batak-pattern reveal">
         <div class="max-w-4xl mx-auto text-center glass-effect p-8 rounded-lg">
           <i class="fas fa-quote-left text-4xl text-accent mb-4"></i>
-          <p class="text-lg md:text-xl italic leading-relaxed text-base">
+          <p
+            class="text-lg md:text-xl italic leading-relaxed text-base font-alice"
+          >
             "Demikianlah mereka bukan lagi dua, melainkan satu."
           </p>
-          <p class="font-heading mt-4 text-xl text-accent">Matius 19:6</p>
+          <p class="font-heading mt-4 text-xl text-accent font-alice">
+            Matius 19:6
+          </p>
         </div>
       </section>
 
-      <!-- Section Profil Pasangan -->
       <section id="couple" class="py-20 px-6 bg-secondary reveal">
         <div class="text-center mb-16">
           <h2 class="font-heading text-4xl md:text-5xl text-accent">
-            Mempelai
+            Mempelai Pasangan
           </h2>
           <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
         </div>
-        <div
-          class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-        >
-          <!-- Profil Wanita -->
-          <div class="text-center">
-            <img
-              src="https://placehold.co/300x300/eae8d7/75101a?text=Adinda"
-              alt="Adinda"
-              class="w-48 h-48 md:w-60 md:h-60 rounded-full mx-auto border-4 border-accent shadow-lg"
-            />
-            <h3 class="font-heading text-4xl text-accent mt-6">
-              Adinda Mawaria
-            </h3>
-            <p class="mt-2 text-base">Putri bungsu dari</p>
-            <p class="font-semibold">Bapak Sanusi S.M & Ibu Jubaedah</p>
-            <a
-              href="#"
-              class="text-accent hover:text-white transition mt-2 inline-block"
-              ><i class="fab fa-instagram mr-2"></i> adinda</a
-            >
+
+        <div class="max-w-5xl mx-auto">
+          <div
+            class="female wow animate__animated animate__fadeInLeft grid-profile grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+          >
+            <div class="box-female relative">
+              <div class="imgWrapper">
+                <img
+                  src="images/2f.jpeg"
+                  alt="Andy"
+                  class="w-full h-auto object-cover rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+
+            <div class="profil-info text-center md:text-left font-alice mt-10">
+              <p class="instagram-profil">
+                <a
+                  href="#"
+                  class="text-accent hover:text-white transition inline-block"
+                >
+                  <b><i class="fab fa-instagram mr-2"></i> Andy</b>
+                </a>
+              </p>
+
+              <p class="couple_female_child_number mt-2 text-base">
+                Putra dari bapak
+              </p>
+
+              <p class="couple_female_father_full_name font-semibold">
+                Timbun Tarigan, S.H.
+                <span class="couple-and text-accent">&</span>
+              </p>
+
+              <p class="couple_female_mother_full_name font-semibold">
+                Ibu Bumbunan Tamba, S.H.
+              </p>
+
+              <h5
+                class="couple_female_complete_name font-heading text-3xl md:text-4xl text-accent mt-4"
+              >
+                <b>Andy Suranta Tarigan, A.Md.Far.</b>
+              </h5>
+            </div>
           </div>
-          <!-- Profil Pria -->
-          <div class="text-center">
-            <img
-              src="https://placehold.co/300x300/eae8d7/75101a?text=John"
-              alt="John Doe"
-              class="w-48 h-48 md:w-60 md:h-60 rounded-full mx-auto border-4 border-accent shadow-lg"
-            />
-            <h3 class="font-heading text-4xl text-accent mt-6">
-              John Doe S.Kom
-            </h3>
-            <p class="mt-2 text-base">Putra pertama dari</p>
-            <p class="font-semibold">Bapak Akbar S.kom & Ibu Siti Maimunah</p>
-            <a
-              href="#"
-              class="text-accent hover:text-white transition mt-2 inline-block"
-              ><i class="fab fa-instagram mr-2"></i> john_doe</a
-            >
+
+          <img
+            src="https://images.ctfassets.net/q40z6pfqje6o/4k2WsDYjwEG4Z5IQUSiLuv/36e99c633f38497eb6fb30628e158d2e/_Group___16_.png"
+            alt="Pemisah Hiasan"
+            class="w-48 md:w-64 h-auto mt-12 mb-18 mx-auto breathing-ornament"
+          />
+
+          <div
+            class="male wow animate__animated animate__fadeInRight grid-profile grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+          >
+            <div class="profil-info text-center md:text-right font-alice mt-10">
+              <p class="instagram-profil">
+                <a
+                  href="#"
+                  class="text-accent hover:text-white transition inline-block"
+                >
+                  <b><i class="fab fa-instagram mr-2"></i> Tatha</b>
+                </a>
+              </p>
+
+              <p class="couple_male_child_number mt-2 text-base">
+                Putri dari bapak
+              </p>
+
+              <p class="couple_male_father_full_name font-semibold">
+                FPM Herman F Hutabarat
+                <span class="couple-and text-accent">&</span>
+              </p>
+
+              <p class="couple_male_mother_full_name font-semibold">
+                Ibu Hastarina Wulandari Br. Simanjuntak
+              </p>
+
+              <h5
+                class="couple_male_complete_name font-heading text-3xl md:text-4xl text-accent mt-4 mb-8"
+              >
+                <b>Romanauli Theresia MP Hutabarat, S.E.</b>
+              </h5>
+            </div>
+
+            <div class="box-male relative">
+              <div class="imgWrapper">
+                <img
+                  src="images/1m.jpeg"
+                  alt="Tatha"
+                  class="w-full h-auto object-cover rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Section Galeri -->
       <section id="gallery" class="py-20 px-6 batak-pattern reveal">
         <div class="text-center mb-16">
           <h2 class="font-heading text-4xl md:text-5xl text-accent">
@@ -169,7 +215,7 @@
             class="overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
           >
             <img
-              src="https://images.unsplash.com/photo-1525841926299-d4826c27b5e4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="images/gallery/1.jpg"
               alt="Foto Prewedding 1"
               class="w-full h-full object-cover gallery-item"
             />
@@ -178,7 +224,7 @@
             class="overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
           >
             <img
-              src="https://images.unsplash.com/photo-1595340843187-88f4a1353f43?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="images/gallery/2.jpg"
               alt="Foto Prewedding 2"
               class="w-full h-full object-cover gallery-item"
             />
@@ -187,137 +233,165 @@
             class="overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
           >
             <img
-              src="https://images.unsplash.com/photo-1606825743770-58253185ae7f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="images/gallery/3.jpg"
               alt="Foto Prewedding 3"
               class="w-full h-full object-cover gallery-item"
             />
           </div>
-          <div
-            class="overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1597157639057-557369b5a452?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Foto Prewedding 4"
-              class="w-full h-full object-cover gallery-item"
-            />
-          </div>
-          <div
-            class="overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300 col-span-2 md:col-span-1"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1616135888360-15330034a74a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Foto Prewedding 5"
-              class="w-full h-full object-cover gallery-item"
-            />
-          </div>
-          <div
-            class="overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1602931597814-74c172433f5d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Foto Prewedding 6"
-              class="w-full h-full object-cover gallery-item"
-            />
-          </div>
-          <div
-            class="overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1597157639073-692849a02424?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Foto Prewedding 7"
-              class="w-full h-full object-cover gallery-item"
-            />
-          </div>
         </div>
       </section>
 
-      <!-- Section Detail Acara & Countdown -->
-      <section id="event" class="py-20 px-6 bg-secondary reveal">
-        <div class="text-center mb-16">
+      <section id="event" class="pt-20 pb-0 bg-secondary reveal">
+        <div class="text-center px-6">
           <h2 class="font-heading text-4xl md:text-5xl text-accent">
-            Detail Acara
+            Save the Date
           </h2>
           <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+
+          <p class="mt-8 text-lg text-base">Sabtu, 22 November 2025</p>
+
+          <div
+            id="countdown"
+            class="flex justify-center space-x-4 md:space-x-8 text-center mt-8 mb-12"
+          >
+            <div>
+              <div
+                id="days"
+                class="font-heading text-4xl md:text-6xl text-accent"
+              >
+                00
+              </div>
+              <div class="text-base mt-1">Hari</div>
+            </div>
+            <div>
+              <div
+                id="hours"
+                class="font-heading text-4xl md:text-6xl text-accent"
+              >
+                00
+              </div>
+              <div class="text-base mt-1">Jam</div>
+            </div>
+            <div>
+              <div
+                id="minutes"
+                class="font-heading text-4xl md:text-6xl text-accent"
+              >
+                00
+              </div>
+              <div class="text-base mt-1">Menit</div>
+            </div>
+            <div>
+              <div
+                id="seconds"
+                class="font-heading text-4xl md:text-6xl text-accent"
+              >
+                00
+              </div>
+              <div class="text-base mt-1">Detik</div>
+            </div>
+          </div>
+
+          <a
+            href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Andy+%26+Tatha&dates=20251122T080000/20251122T140000&details=Pemberkatan+Nikah+(08:00)+dan+Resepsi+(10:00)&location=Jie Poek DW"
+            target="_blank"
+            rel="noopener"
+            class="bg-accent text-secondary font-bold py-3 px-8 rounded-lg shadow-md hover:bg-opacity-80 transition-all duration-300 inline-flex items-center"
+          >
+            <i class="fas fa-calendar-plus mr-2"></i>
+            Simpan Tanggal
+          </a>
         </div>
 
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-8">
-          <!-- Akad Nikah -->
-          <div class="w-full text-center glass-effect p-8 rounded-lg">
-            <h3 class="font-heading text-3xl text-accent">Akad Nikah</h3>
-            <p class="mt-4 text-lg">Kamis, 6 November 2025</p>
-            <p class="text-base">Pukul 09:00 WIB - Selesai</p>
-            <p class="mt-4 text-base">Plataran Menteng, Jakarta</p>
-          </div>
-          <!-- Resepsi -->
-          <div class="w-full text-center glass-effect p-8 rounded-lg">
-            <h3 class="font-heading text-3xl text-accent">Resepsi</h3>
-            <p class="mt-4 text-lg">Kamis, 6 November 2025</p>
-            <p class="text-base">Pukul 15:00 WIB - Selesai</p>
-            <p class="mt-4 text-base">Plataran Menteng, Jakarta</p>
+        <div class="mt-20">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            class="w-full h-20 md:h-32"
+          >
+            <path
+              d="M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="rundown-bg py-20 px-6 -mt-2">
+          <div class="max-w-3xl mx-auto text-center">
+            <div class="mb-12">
+              <h3 class="font-heading text-4xl text-accent">
+                Pemberkatan Nikah
+              </h3>
+              <p class="mt-8 text-lg text-base">Sabtu, 22 November 2025</p>
+              <p class="text-base flex items-center justify-center mt-2">
+                <i class="fas fa-clock mr-2 text-accent"></i>
+                Pukul 08:00 WIB - Selesai
+              </p>
+              <p class="text-base flex items-center justify-center mt-2 px-4">
+                <!-- bold -->
+
+                <span>
+                  <i class="fas fa-map-marker-alt mr-2 text-accent"></i
+                  ><b>Gereja HKBP Sidoarjo</b> Jl. Kwadengan Utara No. 144B,
+                  Lemahputro, Sidoarjo.
+                </span>
+              </p>
+              <a
+                href="https://maps.app.goo.gl/5Tgk3a7zmN4E82bdA"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-block border border-accent text-accent py-2 px-6 rounded-lg hover:bg-accent hover:text-secondary transition-all"
+              >
+                Lihat Lokasi
+              </a>
+            </div>
+
+            <div>
+              <h3 class="font-heading text-4xl text-accent">Resepsi Nikah</h3>
+              <p class="mt-8 text-lg text-base">Sabtu, 22 November 2025</p>
+              <p class="text-base flex items-center justify-center mt-2">
+                <i class="fas fa-clock mr-2 text-accent"></i>
+                Pukul 10:00 WIB - 14:00 WIB
+              </p>
+              <p class="text-base flex items-center justify-center mt-2 px-4">
+                <span>
+                  <i class="fas fa-map-marker-alt mr-2 text-accent"></i>
+                  <b>JIE POEK DW (Le Bleu Room)</b>
+                  Jl. Sunandar Priyo Sudarmo, Larangan, Sidoarjo.
+                </span>
+              </p>
+              <a
+                href="https://maps.app.goo.gl/CaAHYctR6V2sKco8A"
+                target="_blank"
+                rel="noopener"
+                class="mt-4 inline-block border border-accent text-accent py-2 px-6 rounded-lg hover:bg-accent hover:text-secondary transition-all"
+              >
+                Lihat Lokasi
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Countdown Timer -->
-        <div
-          id="countdown"
-          class="flex justify-center space-x-4 md:space-x-8 text-center mt-16"
-        >
-          <div>
-            <div
-              id="days"
-              class="font-heading text-4xl md:text-6xl text-accent"
-            >
-              00
-            </div>
-            <div class="text-base mt-1">Hari</div>
-          </div>
-          <div>
-            <div
-              id="hours"
-              class="font-heading text-4xl md:text-6xl text-accent"
-            >
-              00
-            </div>
-            <div class="text-base mt-1">Jam</div>
-          </div>
-          <div>
-            <div
-              id="minutes"
-              class="font-heading text-4xl md:text-6xl text-accent"
-            >
-              00
-            </div>
-            <div class="text-base mt-1">Menit</div>
-          </div>
-          <div>
-            <div
-              id="seconds"
-              class="font-heading text-4xl md:text-6xl text-accent"
-            >
-              00
-            </div>
-            <div class="text-base mt-1">Detik</div>
-          </div>
-        </div>
+        <div class="max-w-3xl mx-auto text-center px-6 pb-20">
+          <h3 class="font-heading text-4xl text-accent mt-16 mb-4">
+            Denah Lokasi
+          </h3>
 
-        <!-- Google Maps -->
-        <div
-          class="max-w-4xl mx-auto mt-16 rounded-lg overflow-hidden shadow-lg border-2 border-accent"
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.495200257368!2d106.8263864153497!3d-6.19196699551383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f423590651f7%3A0x983424b56075bd8!2sPlataran%20Menteng!5e0!3m2!1sen!2sid!4v1677654321098!5m2!1sen!2sid"
-            width="100%"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+          <div
+            class="mt-8 rounded-lg overflow-hidden border-2 border-accent shadow-lg"
+          >
+            <img
+              src="images/denah.png"
+              alt="Denah Lokasi Acara"
+              class="w-full h-auto"
+            />
+          </div>
         </div>
       </section>
-
-      <!-- Section RSVP -->
       <section id="rsvp" class="py-20 px-6 batak-pattern reveal">
-        <div class="max-w-2xl mx-auto text-center">
+        <!-- <div class="max-w-2xl mx-auto text-center">
           <h2 class="font-heading text-4xl md:text-5xl text-accent">
             Konfirmasi Kehadiran
           </h2>
@@ -375,10 +449,54 @@
               Kirim Konfirmasi
             </button>
           </form>
+        </div> -->
+
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="font-heading text-4xl md:text-5xl text-accent">
+            Tanda Kasih
+          </h2>
+          <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+
+          <!-- <p class="mt-8 text-base">
+            Doa restu Anda pada hari pernikahan kami adalah hadiah yang paling
+            bermakna. Namun, jika Anda berkenan memberikan tanda kasih, Anda
+            dapat melakukannya secara digital melalui:
+          </p> -->
+
+          <div class="mt-12 space-y-6">
+            <div class="glass-effect p-6 rounded-lg text-center">
+              <h3 class="font-heading text-3xl text-accent">Bank BCA</h3>
+              <p class="font-heading text-4xl text-base my-2" id="bank-num-1">
+                8220827853
+              </p>
+              <p class="text-base font-semibold">a/n Andy Suranta Tarigan</p>
+              <button
+                class="copy-btn mt-4 bg-accent text-secondary font-bold py-2 px-5 rounded-lg shadow-md hover:bg-opacity-80 transition-all duration-300 text-sm"
+                data-target="bank-num-1"
+              >
+                <i class="fas fa-copy mr-2"></i> Salin Nomor
+              </button>
+            </div>
+
+            <div class="glass-effect p-6 rounded-lg text-center">
+              <h3 class="font-heading text-3xl text-accent">Bank BCA</h3>
+              <p class="font-heading text-4xl text-base my-2" id="bank-num-2">
+                7625005434
+              </p>
+              <p class="text-base font-semibold">
+                a/n Romanauli Theresia Maranatha
+              </p>
+              <button
+                class="copy-btn mt-4 bg-accent text-secondary font-bold py-2 px-5 rounded-lg shadow-md hover:bg-opacity-80 transition-all duration-300 text-sm"
+                data-target="bank-num-2"
+              >
+                <i class="fas fa-copy mr-2"></i> Salin Nomor
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Section Ucapan & Doa -->
       <section id="wishes" class="py-20 px-6 bg-secondary reveal">
         <div class="text-center mb-16">
           <h2 class="font-heading text-4xl md:text-5xl text-accent">
@@ -388,7 +506,6 @@
         </div>
 
         <div class="max-w-3xl mx-auto">
-          <!-- Form Ucapan -->
           <form id="wish-form" class="glass-effect p-8 rounded-lg mb-12">
             <div class="mb-4">
               <label for="wish-name" class="block text-base mb-2"
@@ -422,7 +539,6 @@
             </button>
           </form>
 
-          <!-- Daftar Ucapan -->
           <div
             id="wishes-list"
             class="space-y-6 max-h-96 overflow-y-auto no-scrollbar p-4"
@@ -444,19 +560,17 @@
         </div>
       </section>
 
-      <!-- Footer -->
       <footer class="py-12 px-6 batak-pattern text-center">
         <p class="text-base">
           Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
           Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada
           kedua mempelai.
         </p>
-        <h3 class="font-heading text-4xl text-accent my-6">Adinda & John</h3>
-        <p class="text-base">&copy; 2025 Our Wedding Link. Dibuat dengan ❤️.</p>
+        <h3 class="font-heading text-4xl text-accent my-6">Andy & Tatha</h3>
+        <p class="text-base">© 2025 Andy & Tatha.</p>
       </footer>
     </main>
 
-    <!-- Modal untuk Galeri Foto -->
     <div
       id="gallery-modal"
       class="fixed inset-0 bg-black bg-opacity-80 z-[101] hidden items-center justify-center p-4"
@@ -466,7 +580,7 @@
           id="close-modal"
           class="absolute -top-2 -right-2 text-white bg-accent rounded-full w-8 h-8 flex items-center justify-center text-xl z-50"
         >
-          &times;
+          ×
         </button>
         <img
           id="modal-image"
@@ -477,7 +591,6 @@
       </div>
     </div>
 
-    <!-- Modal Notifikasi -->
     <div
       id="notification-modal"
       class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-green-500 text-white py-2 px-6 rounded-lg shadow-lg opacity-0 transition-opacity duration-500 z-[102]"
@@ -485,7 +598,6 @@
       <p id="notification-message"></p>
     </div>
 
-    <!-- Navigasi Bawah Tetap -->
     <nav
       id="bottom-nav"
       class="fixed bottom-0 left-0 right-0 bg-secondary bg-opacity-80 backdrop-blur-sm z-50 transform translate-y-full transition-transform duration-500"
@@ -531,7 +643,8 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Mengambil elemen-elemen dari DOM
+        // --- BLOK 1: Fungsionalitas Utama Undangan ---
+
         const cover = document.getElementById("cover");
         const openInvitationButton = document.getElementById("open-invitation");
         const mainContent = document.getElementById("main-content");
@@ -580,8 +693,8 @@
           }
         });
 
-        // Inisialisasi Countdown
-        const countdownDate = new Date("November 6, 2025 09:00:00").getTime();
+        // Inisialisasi Countdown (Sudah di-update ke 08:00)
+        const countdownDate = new Date("November 22, 2025 08:00:00").getTime();
         const countdownElement = {
           days: document.getElementById("days"),
           hours: document.getElementById("hours"),
@@ -656,16 +769,39 @@
           }, 3000);
         }
 
-        // Penanganan Form RSVP
-        document
-          .getElementById("rsvp-form")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-            showNotification(
-              "Terima kasih! Konfirmasi Anda telah kami terima."
-            );
-            this.reset();
+        // // Penanganan Form RSVP
+        // document
+        //   .getElementById("rsvp-form")
+        //   .addEventListener("submit", function (e) {
+        //     e.preventDefault();
+        //     showNotification(
+        //       "Terima kasih! Konfirmasi Anda telah kami terima."
+        //     );
+        //     this.reset();
+        //   });
+
+        // Penanganan Tombol Salin (Copy)
+        document.querySelectorAll(".copy-btn").forEach((button) => {
+          button.addEventListener("click", () => {
+            const targetId = button.dataset.target;
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              const textToCopy = targetElement.textContent.trim();
+              navigator.clipboard
+                .writeText(textToCopy)
+                .then(() => {
+                  a; // Menggunakan fungsi notifikasi Anda yang sudah ada!
+                  showNotification(
+                    `Nomor rekening ${textToCopy} berhasil disalin!`
+                  );
+                })
+                .catch((err) => {
+                  console.error("Gagal menyalin: ", err);
+                  showNotification("Gagal menyalin nomor rekening.", false);
+                });
+            }
           });
+        });
 
         // Penanganan Form Ucapan
         document
@@ -679,9 +815,9 @@
             const newWish = document.createElement("div");
             newWish.className = "glass-effect p-4 rounded-lg";
             newWish.innerHTML = `
-            <p class="font-bold text-accent">${name}</p>
-            <p class="mt-2 text-base italic">"${message}"</p>
-        `;
+           <p class="font-bold text-accent">${name}</p>
+           <p class="mt-2 text-base italic">"${message}"</p>
+         `;
             wishesList.prepend(newWish);
 
             showNotification("Terima kasih atas ucapan dan doanya!");
@@ -712,7 +848,38 @@
             closeModal();
           }
         });
-      });
+
+        // --- BLOK 2: Generator Partikel (Dipindah ke sini) ---
+
+        const particleContainer = document.getElementById("particle-container");
+        if (particleContainer) {
+          const particleCount = 50; // Jumlah partikel yang diinginkan
+
+          for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+
+            // Ukuran acak (antara 2px dan 6px)
+            const size = Math.random() * 4 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Posisi horizontal acak (0% - 100%)
+            particle.style.left = `${Math.random() * 100}%`;
+
+            // Posisi vertikal acak (0% - 100%)
+            particle.style.top = `${Math.random() * 100}%`;
+
+            // Durasi animasi acak (antara 10dtk dan 25dtk)
+            particle.style.animationDuration = `${Math.random() * 15 + 10}s`;
+
+            // Penundaan (delay) animasi acak (antara 0dtk dan 10dtk)
+            particle.style.animationDelay = `${Math.random() * 10}s`;
+
+            particleContainer.appendChild(particle);
+          }
+        }
+      }); // <-- Penutup DOMContentLoaded TUNGGAL
     </script>
   </body>
 </html>

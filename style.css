@@ -81,3 +81,187 @@ h6,
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* --- Tambahkan ini ke style.css --- */
+
+/* --- CSS BARU --- */
+.particle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation-name: drift; /* <== SUDAH DIGANTI */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0; /* Biarkan opacity 0 agar fade-in tetap berfungsi */
+}
+
+/* Animasi Baru: Gerakan 'drift' tidak beraturan */
+@keyframes drift {
+  0% {
+    transform: translate(0px, 20px); /* Mulai dari bawah */
+    opacity: 0;
+  }
+  20% {
+    transform: translate(15px, -20px); /* Gerak ke kanan-atas */
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(-15px, -60px); /* Gerak ke kiri-atas */
+    opacity: 1;
+  }
+  60% {
+    transform: translate(10px, -100px); /* Gerak ke kanan-atas */
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-10px, -140px); /* Gerak ke kiri-atas */
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(5px, -180px); /* Hilang di atas */
+    opacity: 0;
+  }
+}
+
+/* --- Efek Foto Elegan untuk Hero Section --- */
+#hero-image-effect {
+  position: absolute;
+  inset: 0;
+
+  /* Optional: Animasi zoom perlahan (Ken Burns) */
+  animation: kenBurns 14s infinite alternate ease-in-out;
+
+  /* Filter langsung pada gambar asli (tetap oke) */
+  filter: brightness(1.1) contrast(1.05) saturate(1.05);
+}
+/* Definisi animasi @keyframes Ken Burns (jika belum ada) */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Efek Warm Tone Overlay dan Vignette Halus pada Pseudo-element */
+#hero-image-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* Di atas gambar, di bawah teks dan partikel */
+  /* Ganti CSS 'background-image' di dalam #hero-image-effect::before */
+
+  /* Kombinasi Cool Tone Overlay dan Vignette */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(106, 133, 156, 0.1) 0%,
+      /* <-- Warna cool tone (slate blue) */ rgba(221, 94, 94, 0.2) 100%
+        /* <-- Warna cool tone (slate blue) */
+    ),
+    /* Vignette halus (ini tetap sama) */
+      radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.4) 70%,
+        rgba(0, 0, 0, 0.4) 100%
+      );
+}
+
+.font-alice {
+  font-family: "Alice", serif;
+}
+
+/* --- Hiasan Bingkai Atas & Bawah untuk Foto Mempelai --- */
+
+/* STEP 1: Properti Bersama
+  Ini berlaku untuk hiasan ATAS (::before) dan BAWAH (::after).
+  (Pastikan 'position: relative' ada di .box-female & .box-male di HTML)
+*/
+section#couple .box-female::before,
+section#couple .box-male::before,
+section#couple .box-female::after,
+section#couple .box-male::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  /* --- ATUR UKURAN HIASAN DI SINI --- */
+  height: 100px;
+
+  /* Link ke gambar bingkai Anda */
+  background-image: url("https://images.ctfassets.net/q40z6pfqje6o/7LBue05zUwkkRxIj0Yz9wx/55df0f8b2ee4262fef0b8d398a13f94e/bba962b7c709c41319c4677807ce8c2e-ai__1_.png");
+
+  /* Atur agar pas 100% lebar dan tingginya proporsional */
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  /* Pastikan hiasan ada di atas foto */
+  z-index: 2;
+
+  /* Agar hiasan tidak bisa diklik */
+  pointer-events: none;
+}
+
+/* STEP 2: Posisi Hiasan ATAS (::before)
+  Ini mengambil bagian ATAS dari gambar PNG.
+*/
+section#couple .box-female::before,
+section#couple .box-male::before {
+  top: 0;
+  background-position: top center;
+  /* Geser ke atas agar sedikit tumpang tindih (overlap) */
+  transform: translateY(-40%);
+}
+
+/* STEP 3: Posisi Hiasan BAWAH (::after)
+  Ini mengambil bagian BAWAH dari gambar PNG.
+*/
+section#couple .box-female::after,
+section#couple .box-male::after {
+  bottom: 0;
+  background-position: bottom center;
+  /* Geser ke bawah agar sedikit tumpang tindih (overlap) */
+  transform: translateY(40%);
+}
+
+/* --- Animasi Breathing untuk Hiasan Pemisah --- */
+
+/* 1. Definisikan animasinya */
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05); /* Sedikit membesar */
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* 2. Terapkan animasi ke kelas kustom kita */
+.breathing-ornament {
+  /* parameter persis seperti referensi Anda */
+  animation: breathing 3s ease-out infinite normal;
+}
+
+/* --- CSS untuk Section Acara Baru --- */
+
+/* Ini memberi warna pada gelombang SVG */
+.shape-fill {
+  /* Ganti #75101a dengan warna latar 'batak-pattern' Anda */
+  fill: #75101a;
+}
+
+/* Ini memberi latar 'batak-pattern' Anda ke bagian rundown */
+.rundown-bg {
+  /* Ganti jika 'batak-pattern' Anda berbeda */
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  background-color: #75101a;
+  background-blend-mode: overlay;
+}
