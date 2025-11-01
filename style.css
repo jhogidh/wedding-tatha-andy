@@ -265,3 +265,9 @@ section#couple .box-male::after {
   background-color: #75101a;
   background-blend-mode: overlay;
 }
+
+#couple {
+  background-image: url("images/cover.jpg");
+  background-size: cover;
+  background-position: center;
+}
