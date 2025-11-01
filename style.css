@@ -60,7 +60,9 @@ h6,
 
 /* Pola Latar Belakang (Gorga Batak) */
 .batak-pattern {
-  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  background-image: url("images/cover.jpg");
+  background-size: cover;
+  background-position: center;
   background-color: #75101a;
   background-blend-mode: overlay;
 }
@@ -261,13 +263,22 @@ section#couple .box-male::after {
 /* Ini memberi latar 'batak-pattern' Anda ke bagian rundown */
 .rundown-bg {
   /* Ganti jika 'batak-pattern' Anda berbeda */
-  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  background-image: url("images/cover.jpg");
+  background-size: cover;
+  background-position: center;
   background-color: #75101a;
   background-blend-mode: overlay;
 }
 
 #couple {
   background-image: url("images/cover.jpg");
-  background-size: cover;
+  background-size: 100%;
+  background-attachment: fixed;
   background-position: center;
+}
+
+#event {
+  background-image: url("images/cover.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
 }

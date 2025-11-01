@@ -1,0 +1,4 @@
+background (seragam)
+gallery
+animasi (interaksi scroll)
+compress gambar 
