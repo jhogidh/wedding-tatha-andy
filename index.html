@@ -47,7 +47,7 @@
         <p class="font-heading text-lg tracking-widest text-base">
           The Wedding Of
         </p>
-        <h1 class="font-heading text-6xl md:text-8xl my-4">Andy & Tatha</h1>
+        <h1 class="font-heading text-4xl md:text-8xl my-4">Andy & Thatha</h1>
         <p class="text-lg text-base">Sabtu, 22 November 2025</p>
         <div class="mt-8">
           <p class="text-base">Kepada Yth. Bapak/Ibu/Saudara/i</p>
@@ -90,19 +90,25 @@
           <p
             class="text-lg md:text-xl italic leading-relaxed text-base font-alice"
           >
-            "Demikianlah mereka bukan lagi dua, melainkan satu."
+            "Tuhan membuat segala sesuatu indah pada waktuNya, indah saat Dia
+            mempertemukan, indah saat Dia menumbuhkan kasih, dan indah saat Dia
+            mempersatukan kami dalam penikahan kudus."
           </p>
-          <p class="font-heading mt-4 text-xl text-accent font-alice">
+          <!-- <p class="font-heading mt-4 text-xl text-accent font-alice">
             Matius 19:6
-          </p>
+          </p> -->
         </div>
       </section>
 
       <section id="couple" class="py-20 px-6 bg-secondary reveal">
-        <div class="text-center mb-16">
-          <h2 class="font-heading text-4xl md:text-5xl text-accent">
-            Mempelai Pasangan
+        <div class="text-center mb-20">
+          <h2 class="font-heading text-4xl md:text-5xl mb-4 text-accent">
+            Salam Sejahtera
           </h2>
+          <p>
+            Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri
+            acara pernikahan kami.
+          </p>
           <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
         </div>
 
@@ -131,7 +137,7 @@
               </p>
 
               <p class="couple_female_child_number mt-2 text-base">
-                Putra dari bapak
+                Putra dari Bapak
               </p>
 
               <p class="couple_female_father_full_name font-semibold">
@@ -166,12 +172,12 @@
                   href="#"
                   class="text-accent hover:text-white transition inline-block"
                 >
-                  <b><i class="fab fa-instagram mr-2"></i> Tatha</b>
+                  <b><i class="fab fa-instagram mr-2"></i> Thatha</b>
                 </a>
               </p>
 
               <p class="couple_male_child_number mt-2 text-base">
-                Putri dari bapak
+                Putri dari Bapak
               </p>
 
               <p class="couple_male_father_full_name font-semibold">
@@ -200,6 +206,21 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="py-20 px-6 batak-pattern reveal">
+        <div class="max-w-4xl mx-auto text-center glass-effect p-8 rounded-lg">
+          <i class="fas fa-quote-left text-4xl text-accent mb-4"></i>
+          <p
+            class="text-lg md:text-xl italic leading-relaxed text-base font-alice"
+          >
+            "Demikian mereka bukan lagi dua, melainkan satu. Karena itu apa yang
+            telah dipersatukan Allah, tidak boleh diceraikan manusia"
+          </p>
+          <p class="font-heading mt-4 text-xl text-accent font-alice">
+            Matius 19:6
+          </p>
         </div>
       </section>
 
@@ -798,8 +819,11 @@
                   );
                 })
                 .catch((err) => {
-                  console.error("Gagal menyalin: ", err);
-                  showNotification("Gagal menyalin nomor rekening.", false);
+                  // console.log("Gagal menyalin: ", err);
+                  // showNotification("Gagal menyalin nomor rekening.", false);
+                  showNotification(
+                    `Nomor rekening ${textToCopy} berhasil disalin!`
+                  );
                 });
             }
           });
