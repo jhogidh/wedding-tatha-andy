@@ -47,11 +47,10 @@ h6,
 }
 
 /* =====================================================
-[PERUBAHAN UTAMA UNTUK ANIMASI SCROLL RESPONSIF]
+Animasi Scroll Responsif
 =====================================================
 */
 
-/* Properti dasar untuk SEMUA elemen .reveal */
 .reveal {
   opacity: 0;
   transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -59,32 +58,24 @@ h6,
   will-change: opacity, transform;
 }
 
-/* [UBAH] Pengaturan Default (Mobile-First)
-Sekarang semua elemen reveal (termasuk -left dan -right)
-secara default akan bergerak ke atas.
-*/
 .reveal-up,
 .reveal-left,
 .reveal-right {
-  transform: translateY(60px); /* Mulai dari 60px di bawah */
+  transform: translateY(60px);
 }
 
-/* [BARU] Pengaturan Desktop (md: 768px ke atas)
-HANYA di layar medium ke atas kita terapkan animasi horizontal.
-*/
 @media (min-width: 768px) {
   .reveal-left {
-    transform: translateX(-60px); /* Mulai dari 60px di kiri */
+    transform: translateX(-60px);
   }
   .reveal-right {
-    transform: translateX(60px); /* Mulai dari 60px di kanan */
+    transform: translateX(60px);
   }
 }
 
-/* Saat .visible (diberi oleh JS), semua kembali normal */
 .reveal.visible {
   opacity: 1;
-  transform: none; /* Reset transform ke posisi asli */
+  transform: none;
 }
 
 /* Pola Latar Belakang */
@@ -142,10 +133,22 @@ HANYA di layar medium ke atas kita terapkan animasi horizontal.
   }
 }
 
-/* --- Efek Foto Hero Section --- */
-#hero-image-effect {
+/* =====================================================
+[UBAH] Efek Parallax Background (Hero & Thank You)
+=====================================================
+*/
+#hero-image-effect,
+#thank-you-bg {
   position: absolute;
-  inset: 0;
+  left: 0;
+  width: 100%;
+
+  /* [BARU] Buat gambar 30% lebih tinggi dari viewport */
+  height: 130vh;
+  /* [BARU] Posisikan 15% di atas top, agar terpusat */
+  top: -15vh;
+
+  /* Properti lama yang dipertahankan */
   filter: brightness(0.8);
   background-size: cover;
   background-position: center center;
@@ -157,7 +160,11 @@ HANYA di layar medium ke atas kita terapkan animasi horizontal.
 #hero-image-effect::before {
   content: "";
   position: absolute;
-  inset: 0;
+  /* [UBAH] Sesuaikan 'inset' karena parent-nya berubah */
+  top: 15vh;
+  left: 0;
+  right: 0;
+  height: 100vh; /* Tutupi hanya 100vh area yang terlihat */
   background: linear-gradient(
     to bottom,
     rgba(32, 28, 19, 0.4) 0%,
@@ -331,12 +338,7 @@ Transisi Buka Undangan
 Gaya untuk Section Ucapan Terima Kasih
 =====================================================
 */
-#thank-you-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center center;
-  filter: brightness(0.8);
-  transition: transform 0.1s linear;
-  will-change: transform;
-}
+/* Styling untuk #thank-you-bg sekarang digabung dengan 
+#hero-image-effect di bagian atas untuk konsistensi.
+Tidak perlu diduplikasi di sini.
+*/
