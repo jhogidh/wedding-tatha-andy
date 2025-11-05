@@ -350,3 +350,37 @@ Tidak perlu diduplikasi di sini.
   font-family: "Cormorant Garamond", serif;
   margin-right: -0.1em;
 }
+
+/* --- [BARU] Animasi Interaksi Section Couple --- */
+
+/* 1. Sembunyikan kedua elemen (Andy & Thatha) */
+section#couple .female,
+section#couple .male {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity, transform;
+}
+
+/* 2. Atur Posisi Awal (Mobile-first: Keduanya dari bawah) */
+section#couple .female,
+section#couple .male {
+  transform: translateY(60px);
+}
+
+/* 3. Atur Posisi Awal (Desktop: Dari samping "menuju tengah") */
+@media (min-width: 768px) {
+  section#couple .female {
+    transform: translateX(-60px); /* Andy dari kiri */
+  }
+  section#couple .male {
+    transform: translateX(60px); /* Thatha dari kanan */
+  }
+}
+
+/* 4. Saat 'section#couple.visible', tampilkan keduanya SIMULTAN */
+section#couple.visible .female,
+section#couple.visible .male {
+  opacity: 1;
+  transform: none;
+}
