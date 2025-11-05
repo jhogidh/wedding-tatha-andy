@@ -1,5 +1,5 @@
 body {
-  font-family: "Inter", sans-serif; /* Font utama untuk body */
+  font-family: "Inter", sans-serif;
 }
 
 h1,
@@ -9,34 +9,29 @@ h4,
 h5,
 h6,
 .font-heading {
-  font-family: "Playfair Display", serif; /* Font untuk heading */
+  font-family: "Playfair Display", serif;
 }
 
 .font-script {
-  font-family: "Great Vibes", cursive; /* Font untuk nama couple (script elegant) */
+  font-family: "Great Vibes", cursive;
 }
 
 .font-serif {
-  font-family: "Cormorant Garamond", serif; /* Font untuk paragraph elegant */
+  font-family: "Cormorant Garamond", serif;
 }
 
-/* Skema Warna Kustom dari Desain Asli */
-.bg-primary {
-  background-color: #75101a;
-} /* Merah Marun Tua */
+.font-alice {
+  font-family: "Alice", serif;
+}
+
+/* Skema Warna Kustom */
 .bg-secondary {
   background-color: #201c13;
-} /* Coklat Sangat Gelap */
+}
 .bg-accent {
   background-color: #dfae56;
-} /* Emas/Perunggu */
-.bg-base {
-  background-color: #eae8d7;
-} /* Krem/Beige */
-
-.text-primary {
-  color: #75101a;
 }
+
 .text-secondary {
   color: #201c13;
 }
@@ -51,18 +46,48 @@ h6,
   border-color: #dfae56;
 }
 
-/* Animasi untuk elemen yang muncul saat di-scroll */
+/* =====================================================
+[PERUBAHAN UTAMA UNTUK ANIMASI SCROLL RESPONSIF]
+=====================================================
+*/
+
+/* Properti dasar untuk SEMUA elemen .reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity, transform;
 }
 
-/* Pola Latar Belakang (Gorga Batak) */
+/* [UBAH] Pengaturan Default (Mobile-First)
+Sekarang semua elemen reveal (termasuk -left dan -right)
+secara default akan bergerak ke atas.
+*/
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  transform: translateY(60px); /* Mulai dari 60px di bawah */
+}
+
+/* [BARU] Pengaturan Desktop (md: 768px ke atas)
+HANYA di layar medium ke atas kita terapkan animasi horizontal.
+*/
+@media (min-width: 768px) {
+  .reveal-left {
+    transform: translateX(-60px); /* Mulai dari 60px di kiri */
+  }
+  .reveal-right {
+    transform: translateX(60px); /* Mulai dari 60px di kanan */
+  }
+}
+
+/* Saat .visible (diberi oleh JS), semua kembali normal */
+.reveal.visible {
+  opacity: 1;
+  transform: none; /* Reset transform ke posisi asli */
+}
+
+/* Pola Latar Belakang */
 .batak-pattern {
   background-image: url("images/cover.jpg");
   background-size: cover;
@@ -71,7 +96,7 @@ h6,
   background-blend-mode: overlay;
 }
 
-/* Efek glassmorphism untuk kartu/modal */
+/* Efek glassmorphism */
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -79,230 +104,56 @@ h6,
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Mengatur agar scrollbar tidak terlihat tetapi tetap bisa scroll */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* --- Tambahkan ini ke style.css --- */
-
-/* --- CSS BARU --- */
+/* --- Partikel CSS --- */
 .particle {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  animation-name: drift; /* <== SUDAH DIGANTI */
+  animation-name: drift;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  opacity: 0; /* Biarkan opacity 0 agar fade-in tetap berfungsi */
+  opacity: 0;
 }
 
-/* Animasi Baru: Gerakan 'drift' tidak beraturan */
 @keyframes drift {
   0% {
-    transform: translate(0px, 20px); /* Mulai dari bawah */
+    transform: translate(0px, 20px);
     opacity: 0;
   }
   20% {
-    transform: translate(15px, -20px); /* Gerak ke kanan-atas */
+    transform: translate(15px, -20px);
     opacity: 0.8;
   }
   40% {
-    transform: translate(-15px, -60px); /* Gerak ke kiri-atas */
+    transform: translate(-15px, -60px);
     opacity: 1;
   }
   60% {
-    transform: translate(10px, -100px); /* Gerak ke kanan-atas */
+    transform: translate(10px, -100px);
     opacity: 1;
   }
   80% {
-    transform: translate(-10px, -140px); /* Gerak ke kiri-atas */
+    transform: translate(-10px, -140px);
     opacity: 0.8;
   }
   100% {
-    transform: translate(5px, -180px); /* Hilang di atas */
+    transform: translate(5px, -180px);
     opacity: 0;
   }
 }
 
-/* --- Efek Foto Elegan untuk Hero Section --- */
+/* --- Efek Foto Hero Section --- */
 #hero-image-effect {
   position: absolute;
   inset: 0;
-
-  /* Optional: Animasi zoom perlahan (Ken Burns) */
-  animation: kenBurns 14s infinite alternate ease-in-out;
-
-  /* Filter langsung pada gambar asli (tetap oke) */
-  filter: brightness(1.1) contrast(1.05) saturate(1.05);
-}
-/* Definisi animasi @keyframes Ken Burns (jika belum ada) */
-@keyframes kenBurns {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.05);
-  }
-}
-
-/* Efek Warm Tone Overlay dan Vignette Halus pada Pseudo-element */
-#hero-image-effect::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1; /* Di atas gambar, di bawah teks dan partikel */
-  /* Ganti CSS 'background-image' di dalam #hero-image-effect::before */
-
-  /* Kombinasi Cool Tone Overlay dan Vignette */
-  background-image: linear-gradient(
-      to bottom,
-      rgba(106, 133, 156, 0.1) 0%,
-      /* <-- Warna cool tone (slate blue) */ rgba(221, 94, 94, 0.2) 100%
-        /* <-- Warna cool tone (slate blue) */
-    ),
-    /* Vignette halus (ini tetap sama) */
-      radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        rgba(0, 0, 0, 0.4) 70%,
-        rgba(0, 0, 0, 0.4) 100%
-      );
-}
-
-.font-alice {
-  font-family: "Alice", serif;
-}
-
-/* --- Hiasan Bingkai Atas & Bawah untuk Foto Mempelai --- */
-
-/* STEP 1: Properti Bersama
-  Ini berlaku untuk hiasan ATAS (::before) dan BAWAH (::after).
-  (Pastikan 'position: relative' ada di .box-female & .box-male di HTML)
-*/
-section#couple .box-female::before,
-section#couple .box-male::before,
-section#couple .box-female::after,
-section#couple .box-male::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-
-  /* --- ATUR UKURAN HIASAN DI SINI --- */
-  height: 100px;
-
-  /* Link ke gambar bingkai Anda
-  background-image: url("https://images.ctfassets.net/q40z6pfqje6o/7LBue05zUwkkRxIj0Yz9wx/55df0f8b2ee4262fef0b8d398a13f94e/bba962b7c709c41319c4677807ce8c2e-ai__1_.png"); */
-
-  /* Atur agar pas 100% lebar dan tingginya proporsional */
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-
-  /* Pastikan hiasan ada di atas foto */
-  z-index: 2;
-
-  /* Agar hiasan tidak bisa diklik */
-  pointer-events: none;
-}
-
-/* STEP 2: Posisi Hiasan ATAS (::before)
-  Ini mengambil bagian ATAS dari gambar PNG.
-*/
-section#couple .box-female::before,
-section#couple .box-male::before {
-  top: 0;
-  background-position: top center;
-  /* Geser ke atas agar sedikit tumpang tindih (overlap) */
-  transform: translateY(-40%);
-}
-
-/* STEP 3: Posisi Hiasan BAWAH (::after)
-  Ini mengambil bagian BAWAH dari gambar PNG.
-*/
-section#couple .box-female::after,
-section#couple .box-male::after {
-  bottom: 0;
-  background-position: bottom center;
-  /* Geser ke bawah agar sedikit tumpang tindih (overlap) */
-  transform: translateY(40%);
-}
-
-/* --- Animasi Breathing untuk Hiasan Pemisah --- */
-
-/* 1. Definisikan animasinya */
-@keyframes breathing {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.05); /* Sedikit membesar */
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-}
-
-/* 2. Terapkan animasi ke kelas kustom kita */
-.breathing-ornament {
-  /* parameter persis seperti referensi Anda */
-  animation: breathing 3s ease-out infinite normal;
-}
-
-/* --- CSS untuk Section Acara Baru --- */
-
-/* Ini memberi warna pada gelombang SVG */
-.shape-fill {
-  /* Ganti #75101a dengan warna latar 'batak-pattern' Anda */
-  fill: #75101a;
-}
-
-/* Ini memberi latar 'batak-pattern' Anda ke bagian rundown */
-.rundown-bg {
-  /* Ganti jika 'batak-pattern' Anda berbeda */
-  background-image: url("images/cover.jpg");
+  filter: brightness(0.8);
   background-size: cover;
-  background-position: center;
-  background-color: #75101a;
-  background-blend-mode: overlay;
+  background-position: center center;
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
 
-/* --- Ide 1: Animasi Teks "Masking" --- */
-
-/* 1. Buat "pembungkus" untuk teks */
-.text-mask {
-  overflow: hidden;
-  display: block; /* atau 'inline-block' jika perlu */
-}
-
-/* 2. Sembunyikan teks di dalam pembungkus */
-.text-mask > span {
-  display: block;
-  transform: translateY(110%);
-  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-/* 3. Saat .reveal.visible, tampilkan teksnya */
-.reveal.visible .text-mask > span {
-  transform: translateY(0%);
-}
-
-/* 4. (Opsional) Efek berurutan jika ada 2 baris */
-.reveal.visible .text-mask:nth-child(2) > span {
-  transition-delay: 0.1s;
-}
-
-#hero-image-effect {
-  filter: blur(1px) brightness(0.8);
-}
-
+/* Overlay Hero */
 #hero-image-effect::before {
   content: "";
   position: absolute;
@@ -313,52 +164,105 @@ section#couple .box-male::after {
     rgba(32, 28, 19, 0.7) 100%
   );
 }
-/* --- 1. Transisi Cover Sinematik --- */
 
+/* --- Animasi Breathing Hiasan --- */
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+.breathing-ornament {
+  animation: breathing 3s ease-out infinite normal;
+}
+
+/* --- Section Acara --- */
+.shape-fill {
+  fill: #75101a;
+}
+.rundown-bg {
+  background-image: url("images/cover.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: #75101a;
+  background-blend-mode: overlay;
+}
+
+/* --- Animasi Teks "Masking" --- */
+.text-mask {
+  overflow: hidden;
+  display: block;
+}
+.text-mask > span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.reveal.visible .text-mask > span {
+  transform: translateY(0%);
+}
+.reveal.visible .text-mask:nth-child(2) > span {
+  transition-delay: 0.1s;
+}
+
+/* =====================================================
+Transisi Buka Undangan
+=====================================================
+*/
+
+/* Transisi Cover Sinematik */
 #cover {
-  /* ... (properti Anda yang ada biarkan saja) ... */
-  /* Ganti transisi lama dengan ini */
   transition: opacity 1s ease-out,
     transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
 }
-
-/* Kelas ini akan kita tambahkan via JS */
 #cover.is-opened {
   opacity: 0;
-  transform: scale(1.2); /* Efek 'zoom' saat menghilang */
-  pointer-events: none; /* Nonaktifkan setelah dibuka */
+  transform: scale(1.2);
+  pointer-events: none;
+}
+
+/* Transisi untuk konten di dalam cover */
+#cover-content {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  will-change: opacity, transform;
+}
+#cover-content.is-fading {
+  opacity: 0;
+  transform: scale(0.9);
 }
 
 #main-content {
-  opacity: 0; /* Sembunyi di awal */
-  transition: opacity 1s ease-in 0.5s; /* Muncul 0.5s setelah cover ditekan */
+  opacity: 0;
+  transition: opacity 1s ease-in 0.5s;
 }
-
-/* Kelas ini juga ditambahkan via JS */
 #main-content.is-visible {
   opacity: 1;
 }
 
-/* --- 3. Animasi Galeri Staggered --- */
-
-/* Kita targetkan .gallery-item yang ada di HTML Anda */
+/* --- Animasi Galeri Staggered --- */
 .gallery-item {
-  /* Sembunyikan semua item galeri di awal */
   opacity: 0;
   transform: scale(0.8) translateY(20px);
-  /* Atur transisi defaultnya */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  will-change: transform, opacity;
 }
-
-/* Saat section #gallery-nya .visible (dari JS scroll)... */
 #gallery.visible .gallery-item {
-  /* ...tampilkan itemnya */
   opacity: 1;
   transform: scale(1) translateY(0);
 }
-
-/* --- Ini bagian "kece"-nya: DELAY --- */
-/* Atur delay-nya satu per satu! */
+/* Delay staggered */
 #gallery.visible .gallery-item:nth-child(1) {
   transition-delay: 0.1s;
 }
@@ -373,8 +277,66 @@ section#couple .box-male::after {
 }
 #gallery.visible .gallery-item:nth-child(5) {
   transition-delay: 0.15s;
-} /* Baris baru, mulai lagi */
+}
 #gallery.visible .gallery-item:nth-child(6) {
   transition-delay: 0.25s;
-} /* Baris baru */
-/* (Anda bisa lanjutkan polanya jika fotonya lebih banyak) */
+}
+
+/* --- Efek Tombol Buka Undangan --- */
+#open-invitation {
+  box-shadow: 0 0 15px rgba(223, 174, 86, 0.4);
+}
+#open-invitation:hover {
+  box-shadow: 0 0 25px rgba(223, 174, 86, 0.6);
+  transform: scale(1.05);
+}
+
+/* --- Galeri Hover --- */
+.gallery-item img {
+  transition: transform 0.8s ease, filter 0.6s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.85);
+}
+.gallery-item::after {
+  content: "Prewedding Moment";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #eae8d7;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-family: "Alice", serif;
+  font-size: 0.9rem;
+}
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* Modal Galeri Elegan */
+#gallery-modal {
+  transition: opacity 0.4s ease;
+}
+#gallery-modal img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+#gallery-modal img:hover {
+  transform: scale(1.02);
+}
+
+/* =====================================================
+Gaya untuk Section Ucapan Terima Kasih
+=====================================================
+*/
+#thank-you-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(0.8);
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
