@@ -13,9 +13,8 @@ h6,
 }
 
 .font-script {
-  font-family: "Great Vibes", cursive;
+  font-family: "Dancing Script", cursive;
 }
-
 .font-serif {
   font-family: "Cormorant Garamond", serif;
 }
@@ -342,3 +341,12 @@ Gaya untuk Section Ucapan Terima Kasih
 #hero-image-effect di bagian atas untuk konsistensi.
 Tidak perlu diduplikasi di sini.
 */
+
+/* =====================================================
+[BARU] Trik untuk mengganti font huruf 'A'
+=====================================================
+*/
+.capital-a {
+  font-family: "Cormorant Garamond", serif;
+  margin-right: -0.1em;
+}
