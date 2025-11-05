@@ -313,3 +313,68 @@ section#couple .box-male::after {
     rgba(32, 28, 19, 0.7) 100%
   );
 }
+/* --- 1. Transisi Cover Sinematik --- */
+
+#cover {
+  /* ... (properti Anda yang ada biarkan saja) ... */
+  /* Ganti transisi lama dengan ini */
+  transition: opacity 1s ease-out,
+    transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Kelas ini akan kita tambahkan via JS */
+#cover.is-opened {
+  opacity: 0;
+  transform: scale(1.2); /* Efek 'zoom' saat menghilang */
+  pointer-events: none; /* Nonaktifkan setelah dibuka */
+}
+
+#main-content {
+  opacity: 0; /* Sembunyi di awal */
+  transition: opacity 1s ease-in 0.5s; /* Muncul 0.5s setelah cover ditekan */
+}
+
+/* Kelas ini juga ditambahkan via JS */
+#main-content.is-visible {
+  opacity: 1;
+}
+
+/* --- 3. Animasi Galeri Staggered --- */
+
+/* Kita targetkan .gallery-item yang ada di HTML Anda */
+.gallery-item {
+  /* Sembunyikan semua item galeri di awal */
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  /* Atur transisi defaultnya */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Saat section #gallery-nya .visible (dari JS scroll)... */
+#gallery.visible .gallery-item {
+  /* ...tampilkan itemnya */
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* --- Ini bagian "kece"-nya: DELAY --- */
+/* Atur delay-nya satu per satu! */
+#gallery.visible .gallery-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+#gallery.visible .gallery-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+#gallery.visible .gallery-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+#gallery.visible .gallery-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+#gallery.visible .gallery-item:nth-child(5) {
+  transition-delay: 0.15s;
+} /* Baris baru, mulai lagi */
+#gallery.visible .gallery-item:nth-child(6) {
+  transition-delay: 0.25s;
+} /* Baris baru */
+/* (Anda bisa lanjutkan polanya jika fotonya lebih banyak) */

@@ -77,11 +77,11 @@
         <div id="particle-container" class="absolute inset-0 z-5"></div>
 
         <div class="relative z-10 reveal mt-128">
-          <h1 class="font-script text-7xl md:text-9xl mb-4">
+          <h1 class="font-script text-7xl md:text-9xl mb-4 text-mask">
             <span>Andy & Thatha</span>
           </h1>
 
-          <p class="mt-4 text-lg font-serif italic">
+          <p class="mt-4 text-lg font-serif italic text-mask">
             <span>Kami mengundang Anda untuk merayakan hari bahagia kami.</span>
           </p>
         </div>
@@ -458,66 +458,6 @@
         </div>
       </section>
       <section id="rsvp" class="py-20 px-6 batak-pattern reveal">
-        <!-- <div class="max-w-2xl mx-auto text-center">
-          <h2 class="font-heading text-4xl md:text-5xl text-accent">
-            Konfirmasi Kehadiran
-          </h2>
-          <p class="mt-4 text-base">
-            Mohon konfirmasi kehadiran Anda untuk membantu kami mempersiapkan
-            acara ini dengan lebih baik.
-          </p>
-
-          <form
-            id="rsvp-form"
-            class="mt-8 text-left glass-effect p-8 rounded-lg"
-          >
-            <div class="mb-4">
-              <label for="name" class="block text-base mb-2">Nama Anda</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="w-full bg-base bg-opacity-20 text-base rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-accent"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label for="attendance" class="block text-base mb-2"
-                >Konfirmasi Kehadiran</label
-              >
-              <select
-                id="attendance"
-                name="attendance"
-                class="w-full bg-base bg-opacity-20 text-base rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-accent"
-              >
-                <option value="Hadir">Ya, saya akan hadir</option>
-                <option value="Tidak Hadir">Maaf, saya tidak bisa hadir</option>
-              </select>
-            </div>
-            <div class="mb-6">
-              <label for="guests" class="block text-base mb-2"
-                >Jumlah Tamu (termasuk Anda)</label
-              >
-              <input
-                type="number"
-                id="guests"
-                name="guests"
-                value="1"
-                min="1"
-                max="5"
-                class="w-full bg-base bg-opacity-20 text-base rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-accent"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              class="w-full bg-accent text-secondary font-bold py-3 px-8 rounded-lg shadow-md hover:bg-opacity-80 transition-all duration-300"
-            >
-              Kirim Konfirmasi
-            </button>
-          </form>
-        </div> -->
-
         <div class="max-w-2xl mx-auto text-center">
           <h2 class="font-heading text-4xl md:text-5xl text-accent">
             Tanda Kasih
@@ -563,69 +503,6 @@
           </div>
         </div>
       </section>
-
-      <!-- <section id="wishes" class="py-20 px-6 bg-secondary reveal">
-        <div class="text-center mb-16">
-          <h2 class="font-heading text-4xl md:text-5xl text-accent">
-            Ucapan & Doa
-          </h2>
-          <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
-        </div>
-
-        <div class="max-w-3xl mx-auto">
-          <form id="wish-form" class="glass-effect p-8 rounded-lg mb-12">
-            <div class="mb-4">
-              <label for="wish-name" class="block text-base mb-2"
-                >Nama Anda</label
-              >
-              <input
-                type="text"
-                id="wish-name"
-                name="wish-name"
-                class="w-full bg-base bg-opacity-20 text-base rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-accent"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label for="wish-message" class="block text-base mb-2"
-                >Pesan Anda</label
-              >
-              <textarea
-                id="wish-message"
-                name="wish-message"
-                rows="4"
-                class="w-full bg-base bg-opacity-20 text-base rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-accent"
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              class="w-full bg-accent text-secondary font-bold py-3 px-8 rounded-lg shadow-md hover:bg-opacity-80 transition-all duration-300"
-            >
-              Kirim Ucapan
-            </button>
-          </form>
-
-          <div
-            id="wishes-list"
-            class="space-y-6 max-h-96 overflow-y-auto no-scrollbar p-4"
-          >
-            <div class="glass-effect p-4 rounded-lg">
-              <p class="font-bold text-accent">Our Wedding Link</p>
-              <p class="text-sm text-gray-400">di Bekasi</p>
-              <p class="mt-2 text-base italic">
-                "Desain yang indah sangat berarti. Selamat berbahagia untuk
-                kalian semua yang akan menikah."
-              </p>
-            </div>
-            <div class="glass-effect p-4 rounded-lg">
-              <p class="font-bold text-accent">Dee</p>
-              <p class="text-sm text-gray-400">di Bogor</p>
-              <p class="mt-2 text-base italic">"Cantik sekali 💞"</p>
-            </div>
-          </div>
-        </div>
-      </section> -->
 
       <footer class="py-12 px-6 batak-pattern text-center">
         <p class="text-base">
@@ -698,13 +575,6 @@
           <i class="fas fa-gift"></i>
           <span class="text-xs mt-1">Gift</span>
         </a>
-        <!-- <a
-          href="#wishes"
-          class="flex flex-col items-center p-2 rounded-lg hover:bg-accent hover:text-secondary transition-colors"
-        >
-          <i class="fas fa-pen-square"></i>
-          <span class="text-xs mt-1">Ucapan</span>
-        </a> -->
       </div>
     </nav>
 
@@ -951,5 +821,7 @@
         }
       }); // <-- Penutup DOMContentLoaded TUNGGAL
     </script>
+
+    <script src="script.js"></script>
   </body>
 </html>
